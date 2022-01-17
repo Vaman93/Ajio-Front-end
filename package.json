@@ -4,7 +4,8 @@
   "description": "",
   "main": "navbar.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "server" :"nodemon src/server"
   },
   "keywords": [],
   "author": "",
