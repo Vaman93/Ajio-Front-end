@@ -104,14 +104,12 @@ let detail = {
     password: document.getElementById("password").value,
 }
 detail = JSON.stringify(detail);
-console.log('detail:', detail)
 
-
+try{
 
 let url = "https://masai-api-mocker.herokuapp.com/auth/login"
 
 let response = await fetch(url, {
-
     method:"POST",
     body: detail,
 
@@ -120,10 +118,7 @@ let response = await fetch(url, {
     }
 });
 
-console.log('response:', response)
-
 let data = await response.json();
-
 
 if(data.error === true){
     alert("User Not Exist");
@@ -131,7 +126,9 @@ if(data.error === true){
    goinghomepag(user);
 
 }
-
+} catch (e) {
+  alert("User Not Exist");
+}
 
 
 
